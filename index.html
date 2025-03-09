@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ar">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>علماء 16 أفريل</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        direction: rtl;
+        text-align: center;
+        background-color: #f4f4f4;
+      }
+      .navbar {
+        background-color: #333;
+        overflow: hidden;
+        padding: 10px 0;
+      }
+      .navbar a {
+        color: white;
+        text-decoration: none;
+        padding: 14px 20px;
+        display: inline-block;
+      }
+      .navbar a:hover {
+        background-color: #575757;
+      }
+      .content {
+        padding: 20px;
+        background-color: white;
+        margin: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      .scientist {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 15px;
+        margin: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        background-color: #fff;
+      }
+      .scientist img {
+        max-width: 100px;
+        border-radius: 50%;
+      }
+      #searchBox {
+        padding: 10px;
+        width: 80%;
+        margin: 20px auto;
+        display: block;
+        font-size: 16px;
+        text-align: right;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+    </style>
+    <script>
+      function searchScientists() {
+        let input = document.getElementById("searchBox").value.toLowerCase();
+        let scientists = document.getElementsByClassName("scientist");
+
+        for (let i = 0; i < scientists.length; i++) {
+          let name = scientists[i]
+            .getElementsByTagName("h3")[0]
+            .innerText.toLowerCase();
+          if (name.includes(input)) {
+            scientists[i].style.display = "block";
+          } else {
+            scientists[i].style.display = "none";
+          }
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="navbar">
+      <a href="#home">الرئيسية</a>
+      <a href="#about">عنّا</a>
+      <a href="#contact">اتصل بنا</a>
+    </div>
+    <div class="content">
+      <h1>علماء 16 أفريل</h1>
+
+      <input
+        type="text"
+        id="searchBox"
+        onkeyup="searchScientists()"
+        placeholder="ابحث عن عالم..."
+      />
+      <h2>العلماء</h2>
+      <p>
+        يعتبر يوم 16 أفريل مناسبة هامة في الجزائر، حيث نحتفي بعلمائنا الذين
+        ساهموا في النهضة الفكرية والإصلاح الاجتماعي. هؤلاء العلماء لعبوا دورًا
+        بارزًا في نشر العلم ومحاربة الجهل، وكان لهم تأثير كبير في تشكيل الهوية
+        الوطنية.
+      </p>
+      <div class="scientist">
+        <img src="images/عبد-الحميد-إبن-باديس.jpg" />
+        <h1><a href="عبد الحميد بن باديس.html">عبدالحميدإبن باديس</a></h1>
+      </div>
+      <div class="scientist">
+        <img src="images/elibrahimicouleur.jpg" />
+        <h1><a href="البشير الابراهيمي.html">البشير الابراهيمي </a></h1>
+      </div>
+      <div class="scientist">
+        <img src="images/الطبيب العاقبي.jpg" />
+        <h1><a href="الطبيب العقبي.html"> الطيب العقبي</a></h1>
+      </div>
+      <div class="scientist">
+        <img src="images/images.jfif" />
+        <h1><a href="مبارك الميلي.html">المبارك الميلي</a></h1>
+      </div>
+    </div>
+  </body>
+</html>
+ 
